@@ -1,0 +1,141 @@
+### Start a Game:
+POST http://localhost:3000/api/games HTTP/1.1
+content-type: application/json
+
+{
+}
+
+### Create characters:
+POST  http://localhost:3000/api/characters HTTP/1.1
+content-type: application/json
+
+{
+  "name": "Player1",
+  "abilities": ["Archery", "Stealth"]
+}
+
+###
+POST http://localhost:3000/api/characters HTTP/1.1
+content-type: application/json
+
+{
+  "name": "Player2",
+  "abilities": ["Wizard", "Magic"]
+}
+
+### Add characters to the game.
+POST http://localhost:3000/api/games/7130b0f4-2519-480e-a276-a4056fae3ff4/characters/9a5bf33a-1125-4597-9b35-a7b0aa2e05ac HTTP/1.1
+content-type: application/json
+
+{
+}
+
+###
+POST http://localhost:3000/api/games/063d0840-13ef-4055-a3d7-5f2f1d978506/characters/6538dcd9-d404-4ebc-8f00-33668e144b92 HTTP/1.1
+content-type: application/json
+
+{
+}
+
+### Retrieve game state.
+GET http://localhost:3000/api/games/1eb3b18e-cd13-4c76-b66a-cb6e2f1d3a72 HTTP/1.1
+content-type: application/json
+
+{
+}
+
+### Create Monsters
+POST http://localhost:3000/api/monsters HTTP/1.1
+content-type: application/json
+
+{
+  "name": "Orc",
+  "health": 100,
+  "attackPower": 20,
+  "position": { "x": 5, "y": 6 }
+}
+
+###
+POST http://localhost:3000/api/monsters HTTP/1.1
+content-type: application/json
+
+{
+  "name": "Dragon",
+  "health": 300,
+  "attackPower": 50,
+  "position": { "x": 10, "y": 15 }
+}
+
+### Add monsters to the game.
+POST http://localhost:3000/api/games/063d0840-13ef-4055-a3d7-5f2f1d978506/monsters/3770052a-4846-4a8b-bf8b-cd9b1aee04b0 HTTP/1.1
+content-type: application/json
+
+{
+}
+
+###
+POST http://localhost:3000/api/games/063d0840-13ef-4055-a3d7-5f2f1d978506/monsters/c3a06b1b-47f2-41d2-9b5d-ea8756a05fae HTTP/1.1
+content-type: application/json
+
+{
+}
+
+### Create Treasures
+POST http://localhost:3000/api/treasures HTTP/1.1
+content-type: application/json
+
+{
+  "name": "Golden Sword",
+  "value": 500,
+  "position": { "x": 3, "y": 3 }
+}
+
+###
+POST http://localhost:3000/api/treasures HTTP/1.1
+content-type: application/json
+
+{
+  "name": "Healing Potion",
+  "value": 50,
+  "position": { "x": 7, "y": 8 }
+}
+
+### Add treasures to the game.
+POST http://localhost:3000/api/games/063d0840-13ef-4055-a3d7-5f2f1d978506/treasures/a0c354f3-dff7-4980-a70b-69ed939f7c22 HTTP/1.1
+content-type: application/json
+
+{
+}
+
+###
+POST http://localhost:3000/api/games/063d0840-13ef-4055-a3d7-5f2f1d978506/treasures/c2a82e01-22b9-44c1-82ac-ed69558b5b8d HTTP/1.1
+content-type: application/json
+
+{
+}
+
+### Start Game
+PUT http://localhost:3000/api/games/7130b0f4-2519-480e-a276-a4056fae3ff4 HTTP/1.1
+content-type: application/json
+
+{
+  "state": "running"
+}
+
+### Move a Character to a New Position
+PUT http://localhost:3000/api/games/7130b0f4-2519-480e-a276-a4056fae3ff4/characters/9a5bf33a-1125-4597-9b35-a7b0aa2e05ac HTTP/1.1
+content-type: application/json
+
+{
+  "position":{ "x": 5, "y": 6 }
+}
+
+### Fight a Monster
+
+### End the Game 
+PUT http://localhost:3000/api/games/1b96757f-8477-4b86-90e2-7f43dfb551e7 HTTP/1.1
+content-type: application/json
+
+{
+  "inventory": { "treasureId": "43f2044c-57c4-4aca-991e-dd413f0b6d87", "characterId": "2b88770d-a3d3-47fd-ae3b-f011f878521d" }
+}
