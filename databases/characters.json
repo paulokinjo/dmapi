@@ -1,1 +1,16 @@
-[]
+[
+  {
+    "name": "Player1",
+    "abilities": [
+      "Archery",
+      "Stealth"
+    ],
+    "id": "3b7e6c09-79ec-4187-b02d-a86aee6ca58a",
+    "health": 100,
+    "position": {
+      "x": 0,
+      "y": 0
+    },
+    "inventory": []
+  }
+]

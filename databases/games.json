@@ -1,1 +1,9 @@
-[]
+[
+  {
+    "id": "dd47257d-cd08-43ba-8f77-16fd194eb773",
+    "players": [],
+    "monsters": [],
+    "treasures": [],
+    "state": "setup"
+  }
+]

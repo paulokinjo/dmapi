@@ -1,6 +1,6 @@
 // src/repositories/gameRepository.ts
 import Game from '../entities/Game';
-import BaseRepository from './BaseRepository';
+import BaseRepository from './baseRepository';
 
 export default class GameRepository extends BaseRepository<Game> {
   constructor() {

@@ -1,6 +1,6 @@
 // src/repositories/characterRepository.ts
 import Character from '../entities/Character';
-import BaseRepository from './BaseRepository';
+import BaseRepository from './baseRepository';
 
 export default class CharacterRepository extends BaseRepository<Character> {
   constructor() {

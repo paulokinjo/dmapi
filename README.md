@@ -16,8 +16,8 @@ This API enables clients (mobile & web apps) to:
 
 ### **1️⃣ Clone the Repository**  
 ```sh
-git clone https://github.com/your-username/dungeon-master-api.git
-cd dungeon-master-api
+git clone https://github.com/paulokinjo/dmapi
+cd dmapi
 ```
 
 ### **2️⃣ Install Dependencies**  
@@ -48,7 +48,13 @@ curl -X POST http://localhost:3000/games
 ```
 #### **Response**
 ```json
-{ "id": "1234-5678-90", "message": "Game created successfully" }
+{
+  "id": "dd47257d-cd08-43ba-8f77-16fd194eb773",
+  "players": [],
+  "monsters": [],
+  "treasures": [],
+  "state": "setup"
+}
 ```
 
 ---
@@ -65,7 +71,20 @@ curl -X POST http://localhost:3000/characters -d '{"name": "Aragorn", "abilities
 ```
 #### **Response**
 ```json
-{ "id": "abcd-efgh", "message": "Character created successfully" }
+{
+  "name": "Aragorn",
+  "abilities": [
+    "sword",
+    "leadership"
+  ],
+  "id": "3b7e6c09-79ec-4187-b02d-a86aee6ca58a",
+  "health": 100,
+  "position": {
+    "x": 0,
+    "y": 0
+  },
+  "inventory": []
+}
 ```
 
 ---
@@ -105,7 +124,7 @@ curl -X PUT http://localhost:3000/games/1234-5678-90 -d '{"combat": {"monsterId"
 
 ### 🏆 Collect a Treasure  
 ```sh
-curl -X PUT http://localhost:3000/games/1234-5678-90 -d '{"inventory": "Golden Amulet"}' -H "Content-Type: application/json"
+curl -X PUT http://localhost:3000/games/1234-5678-90 -d '{"inventory": inventory: { treasureId: treasure1Id, characterId: character1Id }}' -H "Content-Type: application/json"
 ```
 
 ---
@@ -118,13 +137,22 @@ curl -X PUT http://localhost:3000/games/1234-5678-90 -d '{"inventory": "Golden A
   │   ├── Character.ts
   │   ├── Monster.ts
   │   ├── Treasure.ts
+  ├── factories/
+  │   ├── characterFactory.ts
+  │   ├── gameFactory.ts
+  │   ├── monsterFactory.ts
+  │   ├── treasureFactory.ts
   ├── repositories/
-  │   ├── gameRepository.ts
+  │   ├── baseRepository.ts
   │   ├── characterRepository.ts
+  │   ├── gameRepository.ts
   │   ├── monsterRepository.ts
   │   ├── treasureRepository.ts
   ├── routes/
-  │   ├── gameRoutes.ts
+  │   ├── game
+  │   ├──────├── gameRoutes.characters.ts
+  │   ├──────├── gameRoutes.monsters.ts
+  │   ├──────├── gameRoutes.treasures.ts
   │   ├── characterRoutes.ts
   │   ├── monsterRoutes.ts
   │   ├── treasureRoutes.ts

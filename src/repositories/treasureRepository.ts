@@ -1,6 +1,6 @@
 // src/repositories/treasureRepository.ts
 import Treasure from '../entities/Treasure';
-import BaseRepository from './BaseRepository';
+import BaseRepository from './baseRepository';
 
 export default class TreasureRepository extends BaseRepository<Treasure> {
   constructor() {
