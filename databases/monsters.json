@@ -1,12 +1,1 @@
-[
-  {
-    "name": "Orc",
-    "health": 100,
-    "attackPower": 20,
-    "position": {
-      "x": 5,
-      "y": 6
-    },
-    "id": "6116b401-e43a-48af-af80-1628940fa559"
-  }
-]
+[]
